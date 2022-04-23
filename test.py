@@ -10,11 +10,9 @@ class Testuser(unittest.TestCase):
 
 #setUp() method allows the definition of instructions to be executed before each test .
     def setUp(self):
-        self.new_user = User("James","Muriuki","JM","abcd")
+        self.new_user = User("JM","abcd")
 
     def test_init(self):
-        self.assertEqual(self.new_user.fname,"James")
-        self.assertEqual(self.new_user.lname,"Muriuki")
         self.assertEqual(self.new_user.username,"JM")
         self.assertEqual(self.new_user.password,"abcd") 
 
