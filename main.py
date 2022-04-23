@@ -85,9 +85,20 @@ def passwordlocker():
                     choice3 = input()
                     if choice3 == "E":
                             letters = string.ascii_lowercase + string.digits + string.punctuation
-                            result_str = ''.join(secrets.choice(letters)
+                            accountpassword = ''.join(secrets.choice(letters)
                              for i in range(5,10))
-                            print("Your password is:", result_str)
+                            print(f"Password: {accountpassword}")
+                    elif choice3 == "G":
+                        print("Enter password")
+                        accountpassword =input()
+                    else:
+                        print("Invalid choice")
+                    save_account(create_account(accountusername,accountname,accountpassword))
+                    print("\n")
+                    print(f"username: {accountusername} \n Account name: {accountname} \n Password: {accountpassword}")   
+
+                elif choice2 == "V":
+                    
 
         # else:
         #     print("no")
