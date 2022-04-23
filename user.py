@@ -7,9 +7,7 @@ class User:
 
 
     userslist=[]
-    def __init__(self,fname,lname,username,password):
-        self.fname = fname
-        self.lname = lname
+    def __init__(self,username,password):
         self.username = username
         self.password = password
 
@@ -58,8 +56,8 @@ class Credentials:
     # display account
     @classmethod
     def display_account(cls):
-        # for account in cls.accounts:
-            return cls
+        for account in cls.accounts:
+            return cls.accounts
 
     @classmethod
     def find_by_number(cls,number):
