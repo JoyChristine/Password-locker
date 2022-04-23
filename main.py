@@ -28,6 +28,10 @@ def create_account(accountusername,accountname,accountpassword):
     newaccount = Credentials(accountusername,accountname,accountpassword)
     return newaccount
 
+def generate_Password():
+
+    auto_password=Credentials.generateNewPassword()
+    return auto_password
 # save account user
 def save_account(user):
     user.save_account()
@@ -48,6 +52,7 @@ def delete_account(user):
 def passwordlocker():
     accountusername = ""
     user = ""
+    accountpassword = ""
     while True:
         print("Welcome to Password Locker")
         # Doyou have an existing account
@@ -66,7 +71,7 @@ def passwordlocker():
             print(f"Success! An account was created by {username}. See details below")
             # print("-"*100)
             print(f"Username: {username} \nPassword: {password}")
-            print(f"Hi {username}, thanks for using Password locker")
+            # print(f"Hi {username}, thanks for using Password locker")
             print("-"*100)
         elif choice == "L":
             print("Enter your username")
@@ -89,38 +94,41 @@ def passwordlocker():
                     print("Enter own password or generate  E/G")
                     choice3 = input()
                     if choice3 == "G":
-                            letters = string.ascii_lowercase + string.digits + string.punctuation
-                            accountpassword = ''.join(secrets.choice(letters) for i in range(5,10))
-                            print(f"Password: {accountpassword}")
+                        accountpassword = generate_Password()
                     elif choice3 == "E":
-                        print("Enter password")
                         accountpassword=input()
-                        # print
-                        # print(f" Account name: {accountname} \n Password: {accountpassword}") 
+                        print("Enter password")
+                        
+                       
                     else:
                         print("Invalid choice")
                         print("Enter own password or generate  E/G")
-                    save_account(create_account(accountusername,accountname,accountpassword))
+                    save_account(create_account(accountname,accountusername,accountpassword))
                     print("\n")
-                    print(f"username: {accountusername} \nAccount name: {accountname} \nPassword: {accountpassword}")   
-
+                    print(f"New account details \nusername: {accountusername} \nAccount name: {accountname} \nPassword: {accountpassword}")   
+                    print("\n")
                 elif choice2 == "V":
                     if find_account(accountusername):
                         print("List of accounts you have")
 
                         for user in display_account():
                             print(f"Account: {user.accountname} \n Password: {user.accountpassword} \n") 
+                            print("\n")
                             # NOT WORKING
                     else:
                         print("Invalid choice 1")
+                        print("\n")
                 else:
                     print("Please input C or V")
+                    print("\n")
                 
             else:
                 print("Invalid choice 2")
-        else:
-            print("Invalid choice! Choose L or S")
+                print("\n")
 
+        else:
+            print("Invalid choice! Choose C or L")
+            print("\n \n")
        
    
 if __name__ == "__main__":
