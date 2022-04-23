@@ -1,5 +1,6 @@
 import pyperclip
 
+# Created a dictionary of accounts + passwords
 mypasswords = {'twitter':'mytwitterpassword',
                 'behance':'mybehancepassword'
                 ,'facebook':'myfacebookpassword'
@@ -10,10 +11,10 @@ repeat_forever = True
 def get_mypassword():
     for i in mypasswords:
         print(i)
-        # print(i + "-"+mypasswords[i])
-   
-
-# def get_mypassword():
+        # Print out account + password
+        # print(i + "-"+mypasswords[i]) 
+        # 
+# Get password and copy paste it
     try:
         i_selected = input("Which account password do you want? ").lower()
         selected_password = mypasswords[i_selected]
@@ -34,7 +35,7 @@ while repeat_forever:
     get_another_password = input("Get new password? y/n")
 
     if get_another_password == "y":
-            get_password()
+            get_mypassword()
     else:
             repeat_forever = False
             print("Okay")
