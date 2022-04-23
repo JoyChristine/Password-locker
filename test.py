@@ -1,17 +1,23 @@
 # Tests
 import unittest
-import user
 
-class TestUser(unittest.TestCase):
+from user import User
+from user import Credentials
+# from user import user
 
+#a Test class that defines test cases
+class Testuser(unittest.TestCase):
+
+#setUp() method allows the definition of instructions to be executed before each test .
     def setUp(self):
-        self.new_user = user("James","Muriuki","abcd")
+        self.new_user = User("James","Muriuki","JM","abcd")
 
     def test_init(self):
-        self.assertEqual(self.new_user.fname == "James")
-        self.assertEqual(self.new_user.lname == "Muriuki")
-        self.assertEqual(self.new_user.password == "abcd") 
+        self.assertEqual(self.new_user.fname,"James")
+        self.assertEqual(self.new_user.lname,"Muriuki")
+        self.assertEqual(self.new_user.username,"JM")
+        self.assertEqual(self.new_user.password,"abcd") 
 
-
+# we are confirming that anything inside the if block should run only if this is the file that is currently being run
 if __name__ == "__main__":
     unittest.main()
