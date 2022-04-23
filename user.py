@@ -1,11 +1,16 @@
 # class of user
+import random
+import string
+
+
 class User:
 
 
     userslist=[]
-    def __init__(self,fname,lname,password):
+    def __init__(self,fname,lname,username,password):
         self.fname = fname
         self.lname = lname
+        self.username = username
         self.password = password
 
     # every item is printed is put in the dict
