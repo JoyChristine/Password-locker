@@ -1,5 +1,5 @@
 # class of user
-import random
+import secrets
 import string
 
 
@@ -19,6 +19,9 @@ class User:
     # delete
     def delete_user(self):
         User.userslist.remove(self)
+
+    def tearDown(self):
+            User.userslist = []
 
     # display users
     @classmethod 
@@ -53,6 +56,8 @@ class Credentials:
     def delete_account(self):
         Credentials.accounts.remove(self)
 
+    def tearDown(self):
+            Credentials.accounts = []
     # display account
     @classmethod
     def display_account(cls):
@@ -64,3 +69,12 @@ class Credentials:
         for account in cls.accounts:
             if account.accountusername == number:
                 return True
+
+    # Password
+    def generateNewPassword(length=10):
+        # Generate random password using cryptographic way
+        letters = string.ascii_lowercase + string.digits + string.punctuation
+        return ''.join(secrets.choice(letters) for i in range(length))
+        
+
+
