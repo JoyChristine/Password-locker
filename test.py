@@ -18,6 +18,10 @@ class Testuser(unittest.TestCase):
         self.assertEqual(self.new_user.username,"JM")
         self.assertEqual(self.new_user.password,"abcd") 
 
+    def test_save_user(self):
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_list),1)
+
 # we are confirming that anything inside the if block should run only if this is the file that is currently being run
 if __name__ == "__main__":
     unittest.main()
