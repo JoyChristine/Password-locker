@@ -11,7 +11,7 @@ def create_user(username,password):
 # save  user
 def save_user(user):
     user.save_user()
-    print("Success! An account was created. See details below")
+    # print(f"Success! An account was created by {username}. See details below")
 # find user
 def find_user(number):
     return User.find_by_number(number)
@@ -49,27 +49,25 @@ def passwordlocker():
     accountusername = ""
     user = ""
     while True:
-        print("Welcome to Password Locker, My name is Bot")
+        print("Welcome to Password Locker")
         # Doyou have an existing account
-        print("Would you like to Login or Sign up to existing account? L/S")
+        print("Would you like to Create new account Or login to exising account? \nCreate account --> C \nLogin --> L")
         choice = input()
-        if choice == "S":
+        if choice == "C":
             print("Create new account")
             print("-"*100)
-            # print("Enter your first name")
-            # fname = input()
-            # print("Enter your last name")
-            # lname = input()
+            
             print("Enter your username")
             username = input()
             print("Enter your password")
             password = input()
+            print("\n \n")
             save_user(create_user(username, password))
-            # print("Success! An account was created. See details below")
-            print("-"*100)
+            print(f"Success! An account was created by {username}. See details below")
+            # print("-"*100)
             print(f"Username: {username} \nPassword: {password}")
-            
-            print("Use the details to login to account \n")
+            print(f"Hi {username}, thanks for using Password locker")
+            print("-"*100)
         elif choice == "L":
             print("Enter your username")
             loginUsername=input()
@@ -81,15 +79,18 @@ def passwordlocker():
                 choice2 = input()
                 if choice2 == "C":
                     print("Create new account")
+                    # accountusername=loginUsername
+                    # print("Account Username")
                     accountusername=loginUsername
+                    # accountusername = input()
                     print("Account name")
                     accountname=input()
+                    
                     print("Enter own password or generate  E/G")
                     choice3 = input()
                     if choice3 == "G":
                             letters = string.ascii_lowercase + string.digits + string.punctuation
-                            accountpassword = ''.join(secrets.choice(letters)
-                             for i in range(5,10))
+                            accountpassword = ''.join(secrets.choice(letters) for i in range(5,10))
                             print(f"Password: {accountpassword}")
                     elif choice3 == "E":
                         print("Enter password")
@@ -98,13 +99,14 @@ def passwordlocker():
                         # print(f" Account name: {accountname} \n Password: {accountpassword}") 
                     else:
                         print("Invalid choice")
+                        print("Enter own password or generate  E/G")
                     save_account(create_account(accountusername,accountname,accountpassword))
                     print("\n")
-                    print(f"username: {accountusername} \n Account name: {accountname} \n Password: {accountpassword}")   
+                    print(f"username: {accountusername} \nAccount name: {accountname} \nPassword: {accountpassword}")   
 
                 elif choice2 == "V":
                     if find_account(accountusername):
-                        print("Here's a list of your Accounts")
+                        print("List of accounts you have")
 
                         for user in display_account():
                             print(f"Account: {user.accountname} \n Password: {user.accountpassword} \n") 
