@@ -45,6 +45,7 @@ def delete_account(user):
     user.delete_account()
     
 def passwordlocker():
+    accountusername = ""
     while True:
         print("Welcome to Password Locker, My name is Bot")
         # Doyou have an existing account
@@ -98,15 +99,25 @@ def passwordlocker():
                     print(f"username: {accountusername} \n Account name: {accountname} \n Password: {accountpassword}")   
 
                 elif choice2 == "V":
-                    
+                    if find_account(accountusername):
+                        print("Here's a list of your Accounts")
 
-        # else:
-        #     print("no")
+                        for user in display_account():
+                            print(f"Account: {user.accountname} \n Password: {user.accountpassword} \n")
+                    else:
+                        print("Invalid")
+                else:
+                    print("Please input C or V")
+                
+            else:
+                print("Invalid")
+        else:
+            print("Invalid")
 
        
    
 if __name__ == "__main__":
-        passwordlocker()
+    passwordlocker()
 
 
 
