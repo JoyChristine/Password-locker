@@ -5,36 +5,38 @@ from credentials import Credentials
 
 
 def create_new_account(accountname, accountpassword):
+	""" Function to create a new account and the accountname & accountpassword"""
 	new_credential = Credentials(accountname, accountpassword)
 	return new_credential
 
 
 def save_new_account(credentials):
+	"""Function to save all the account details """
 	credentials.save_account()
 
 def check_existing_account(name):
-    	return Credentials.find_account_by_name(name)
+    """ Function to check if an account with the exact searched account name exists"""
+    
+    return Credentials.find_account_by_name(name)
 
 def delete_account(credentials):
-    	return Credentials.delete_account(credentials)
+    
+    """ Function to delete an account together with the accountpassword"""
+    
+    return Credentials.delete_account(credentials)
 
 def find_account(accountname):
+	""" Function to find an account by name"""
 	return Credentials.find_account_by_name(accountname)
 
 def display_account():
-    	return Credentials.display_account()
-
-
-# def check_existing_account(name):
-# 	return Credentials.find_account_by_name(name)
-
-
-# def display_account():
-# 	return Credentials.display_account()
-
+    """Function to display all accounts saved"""
+    return Credentials.display_account()
 
 def delete_account(credentials):
+	"""Function to delete all accounts saved"""
 	return Credentials.delete_account(credentials)
+
 
 def passwordlocker():
 
