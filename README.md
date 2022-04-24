@@ -21,7 +21,7 @@ The user also has an option of inputting a password or autogenerating a password
 
 ## Set-up and Installation
     1. Clone or download the Repo
-     * git clone https://github.com/JoyChristine/Password-locker.git
+      git clone https://github.com/JoyChristine/Password-locker.git
     2. Install python 3
     3. Run `python3 main.py` on your terminal
 
