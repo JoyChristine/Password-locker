@@ -38,4 +38,12 @@ Add 2 features;
 ## Technologies Used
 Built using Python 3.8
 
+## Contact Information
+If you have any question or contributions that would better this app, please email me at [joychristin2@gmail.com]
+
+ ## License
+MIT License:
+Copyright (c) 2022 JoyChristine
+
+
 
