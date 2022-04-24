@@ -39,11 +39,12 @@ Add 2 features;
 Built using Python 3.8
 
 ## Contact Information
-If you have any question or contributions that would better this app, please email me at [joychristin2@gmail.com]
+If you have any question or contributions that would better this app, please email me at  **[joychristin2@gmail.com](joychristi2@gmail.com)**
 
  ## License
 MIT License:
 Copyright (c) 2022 JoyChristine
+
 
 
 
